@@ -1,0 +1,445 @@
+html, body { height: 100%; }
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  background-color: #3cbcfc;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.gs {
+  background-image: url('../img/gs.png');
+  background-repeat: no-repeat;
+  background-position: 9999px 9999px;
+}
+
+.gs_2{
+  background-image: url('../img/gs_2.png');
+  background-size: 1176px 813px;
+  background-position: 9999px 9999px;
+}
+
+* {
+  cursor: url('../img/aim.png'), crosshair;
+}
+
+.foot{
+  position: relative;
+  top: 245px;
+  left: 0;
+  width: 100%;
+  height: 226px;
+  background: url('../img/bg.png') 0 0 repeat-x;
+  z-index: 30;
+}
+
+.tree{
+  background-image: url('../img/wood.png');
+  background-size: 200px 300px;
+  position: relative;
+  left: 307px;
+  top: 376px;
+  width: 200px;
+  height: 300px;
+  z-index: 20;
+}
+
+.grass{
+  background-image: url('../img/shrub.png');
+  background-size: 100px 100px;
+  position: relative;
+  left: 407px;
+  top: 276px;
+  width: 100px;
+  height: 100px;
+  z-index: 20;
+}
+
+.dog {
+  position: relative;
+  left: 0;
+  width: 166px;
+  height: 122px;
+  -ms-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+  transition: transform 2s linear;
+  z-index: 40;
+}
+
+.dog_walk {
+  animation-name: dog-walk;
+  animation-duration: .4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+  -ms-transform: translate(45vw, 0px);
+      transform: translate(45vw, 0px);
+  transition: transform 3s linear;
+}
+
+.dog_jump {
+  width: 160px;
+  height: 143px;
+  animation-name: dog-jump;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+  -ms-transform: translate(48vw, -80px);
+      transform: translate(48vw, -80px);
+  transition: transform .4s linear .5s;
+}
+
+.dog_and_duck, .dog_and_miss, .dog_and_duck_2{
+  background-image: url('../img/gs_2.png');
+  background-size: 1318px 894px;
+  position: relative;
+  left: 23px;
+  bottom: 30px;
+  width: 150px;
+  height: 180px;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1);
+  animation-delay: 0s; 
+  z-index: 20;
+}
+.dog_and_duck{
+  animation-name: dog-and-duck;
+}
+.dog_and_duck_2{
+  left: 0px;
+  
+  width: 200px;
+  height: 10px;
+  animation-name: dog-and-duck_2;
+}
+.dog_and_miss{
+  bottom: 40px; 
+  width: 110px;
+  height: 110px; 
+  animation-name: dog-and-miss;
+}
+
+@keyframes dog-walk {
+  0% {
+    background-position: -24px -24px;
+  }
+  25% {
+    background-position: -206px -24px;
+  }
+  50% {
+    background-position: -388px -24px;
+  }
+  75% {
+    background-position: -570px -24px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+
+@keyframes dog-jump {
+  0% {
+    background-position: -746px -6px;
+  }
+  25% {
+    width: 101px;
+    height: 96px;
+    background-position: -932px -59px;
+  }
+  100% {
+    width: 101px;
+    height: 96px;
+    background-position: -932px -59px;
+  }
+}
+
+@keyframes dog-and-duck {
+  0% {
+    background-position: -1168px 53px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+
+@keyframes dog-and-duck_2 {
+  0% {
+    background-position: -1120px -130px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+
+@keyframes dog-and-miss {
+  0% {
+    background-position: -898px -129px;
+  }
+  100% {
+    background-position: -24px -24px;
+  }
+}
+
+.duck {
+  position: absolute;
+  bottom: 226px;
+  left: 0;
+  display: none;
+}
+
+.duck_2 {
+  position: absolute;
+  bottom: 35px;
+  left: 200px;
+  display: none;
+}
+
+.duck_fly, .duck_2_fly{
+  display: block !important;
+  transition: left 1s linear;
+}
+
+.duck_shot, .duck_2_shot{
+  display: block !important;
+  animation-duration: 2s;
+  /* animation-fill-mode: forwards; */
+  animation-delay: 0s;
+}
+
+.duck_fly_left, .duck_fly_top_left, .duck_fly_right,
+.duck_fly_top_right, .duck_2_fly_left, .duck_2_fly_top_left,
+.duck_2_fly_right, .duck_2_fly_top_right
+{
+  display: block !important;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1, end);
+  animation-delay: 0s;
+}
+
+.duck_fly_left {
+  left: 1400px;
+  animation-name: duck-fly-left;
+}
+.duck_fly_top_left {
+  
+  animation-name: duck-fly-top-left;
+}
+.duck_fly_right {
+  left: -543px;
+  top: 939px;
+  animation-name: duck-fly-right;
+  
+}
+.duck_fly_top_right {
+  left: 1600px;
+  bottom: 55px;
+  animation-name: duck-fly-top-right;
+}
+.duck_shot{
+  background-image: url('../img/gs_2.png');
+  animation-name: duck-shot;
+}
+
+.duck_2_fly_left {
+  left: 2900px;
+  top: 2000px;
+  animation-name: duck-2-fly-left;
+}
+.duck_2_fly_top_left {
+  top: 1200px;
+
+  animation-name: duck-2-fly-top-left;
+}
+.duck_2_fly_right {
+  animation-name: duck-2-fly-right;
+}
+.duck_2_fly_top_right {
+  animation-name: duck-2-fly-top-right;
+}
+.duck_2_shot{
+  background-image: url('../img/gs_2.png');
+  animation-name: duck-2-shot;
+}
+
+
+@keyframes duck-fly-left {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -542px -203px;
+    
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -956px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -542px -203px;
+  }
+}
+
+@keyframes duck-fly-top-left {
+  0% {
+    width: 74px;
+    height: 95px;
+    background-position: -116px -176px;
+  }
+  50% {
+    width: 104px;
+    height: 95px;
+    background-position: -434px -182px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -116px -176px;
+  }
+}
+@keyframes duck-fly-right {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -818px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+}
+@keyframes duck-fly-top-right {
+  0% {
+    width: 74px;
+    height: 95px;
+    background-position: -218px -176px;
+  }
+  50% {
+    width: 104px;
+    height: 95px;
+    background-position: -323px -182px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -218px -176px;
+  }
+}
+@keyframes duck-shot {
+  0% {
+    width: 82px;
+    height: 95px;
+    background-position: -255px -457px;
+  }
+  50% {
+    width: 74px;
+    height: 71px;
+    background-position: -344px -471px;
+  }
+  100%{
+    width: 74px;
+    height: 71px;
+    background-position: -344px -471px;
+  }
+}
+
+@keyframes duck-2-fly-left {
+  0% {
+    width: 130px;
+    height: 72px;
+    background-position: -544px -313px;
+  }
+
+  50% {
+    width: 118px;
+    height: 61px;
+    background-position: -947px -331px;
+  }
+  100% {
+    width: 118px;
+    height: 72px;
+    background-position: -524px -203px;
+  }
+}
+@keyframes duck-2-fly-top-left {
+  0% {
+    width: 95px;
+    height: 95px;
+    background-position: -241px -304px;
+  }
+  50% {
+    width: 104px;
+    height: 104px;
+    background-position: -440px -293px;
+  }
+  100% {
+    width: 95px;
+    height: 95px;
+    background-position: -241px -304px;
+  }
+}
+@keyframes duck-2-fly-right {
+  0% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+  50% {
+    width: 104px;
+    height: 61px;
+    background-position: -818px -212px;
+  }
+  100% {
+    width: 102px;
+    height: 72px;
+    background-position: -680px -203px;
+  }
+}
+@keyframes duck-2-fly-top-right {
+  0% {
+    width: 94px;
+    height: 95px;
+    background-position: -135px -305px;
+  }
+  50% {
+    width: 74px;
+    height: 95px;
+    background-position: -357px -294px;
+  }
+  100% {
+    width: 74px;
+    height: 95px;
+    background-position: -217px -307px;
+  }
+}
+@keyframes duck-2-shot {
+  0% {
+    width: 82px;
+    height: 95px;
+    background-position: 6px -457px;
+  }
+
+  50% {
+      width: 74px;
+      height: 71px;
+      background-position: -75px -471px;
+  }
+  100%{
+    width: 74px;
+    height: 71px;
+    background-position: -75px -471px;
+  }
+}
+ 
+
